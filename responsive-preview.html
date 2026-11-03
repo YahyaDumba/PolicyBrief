@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PolicyBrief — responsive preview</title>
+<link rel="stylesheet" href="app/globals.css" />
+</head>
+<body>
+<div class="shell">
+  <header class="hero">
+    <p class="brand">PolicyBrief</p>
+    <h1 class="headline">Know what a site does with your data.</h1>
+    <p class="lede">Paste a website, we locate its privacy policy, and Groq turns the legalese into a clear brief.</p>
+  </header>
+
+  <nav class="tabs" aria-label="Result sections">
+    <button type="button" class="tab is-active" data-tab="analyze">Analyze</button>
+    <button type="button" class="tab" data-tab="summary">Summary</button>
+    <button type="button" class="tab" data-tab="data">Data collected</button>
+    <button type="button" class="tab" data-tab="sharing">Sharing &amp; rights</button>
+    <button type="button" class="tab" data-tab="risks">Risks</button>
+    <button type="button" class="tab" data-tab="charts">Risk charts</button>
+    <button type="button" class="tab" data-tab="trackers">Cookies &amp; trackers</button>
+  </nav>
+
+  <div class="toolbar">
+    <button type="button" class="export-btn" id="export-md">Export report</button>
+    <button type="button" class="export-btn ghost" id="export-json">JSON</button>
+  </div>
+
+  <section class="panel">
+    <div class="panel-body" data-panel="analyze">
+      <h2 class="panel-title">Analyze a site</h2>
+      <p class="panel-copy">Enter a homepage or any page on the site. We discover the privacy policy link, read it, and summarize the important parts.</p>
+      <form class="analyze-form" onsubmit="return false">
+        <label class="field-label" for="site-url">Website URL</label>
+        <div class="field-row">
+          <input id="site-url" type="text" inputmode="url" placeholder="example.com" value="example.com" />
+          <button type="submit" class="cta">Analyze</button>
+        </div>
+      </form>
+      <p class="status ok">Last analyzed Nov 3, 2026, 3:20 PM. Open the other tabs for the brief.</p>
+    </div>
+
+    <div class="panel-body" data-panel="summary" hidden>
+      <h2 class="panel-title">Summary</h2>
+      <p class="meta">Policy: <a href="#">https://example.com/privacy-policy</a></p>
+      <p class="prose">Example.com is a service provider that collects account details you give it directly — name, email address and password — alongside data generated as you use the site, such as pages viewed, search queries and the device and browser you connect from. It also states that it receives limited information from advertising and analytics partners.</p>
+      <p class="prose">That information is used to run and improve the service, personalize content, measure performance, prevent fraud and send marketing where you have opted in. The policy says data may be shared with service providers who process it on the company's behalf, with advertising and analytics partners, and with authorities where legally required; it does not claim to sell personal information outright, though the wording around "partners" is broad.</p>
+      <p class="prose">Retention periods are described by category rather than as fixed terms, and account data is kept until you delete your account. You can access, correct, export or delete your data from account settings, opt out of marketing at any time, and exercise region-specific rights such as objection or restriction by contacting the privacy team. Cookies include essential, analytics and advertising types, with a consent banner offered in some regions, and the policy notes that not all trackers are described in detail.</p>
+    </div>
+
+    <div class="panel-body" data-panel="data" hidden>
+      <h2 class="panel-title">Data collected</h2>
+      <p class="panel-copy">Categories of personal information this policy says the site gathers.</p>
+      <ul class="bullet-list">
+        <li>Account details such as name and email address</li>
+        <li>Device and browser information</li>
+        <li>Usage and interaction data</li>
+      </ul>
+    </div>
+
+    <div class="panel-body" data-panel="sharing" hidden>
+      <h2 class="panel-title">Sharing &amp; rights</h2>
+      <div class="split">
+        <div>
+          <h3 class="subhead">Sharing</h3>
+          <ul class="bullet-list">
+            <li>Shared with service providers</li>
+            <li>Disclosed for legal reasons</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="subhead">Your rights</h3>
+          <ul class="bullet-list">
+            <li>Access and correction</li>
+            <li>Deletion requests</li>
+          </ul>
+        </div>
+      </div>
+      <h3 class="subhead">Cookies &amp; tracking (as stated in the policy)</h3>
+      <p class="prose">The site uses essential and analytics cookies, and offers a consent banner in some regions.</p>
+    </div>
+
+    <div class="panel-body" data-panel="risks" hidden>
+      <h2 class="panel-title">Risks</h2>
+      <div class="risk-badge risk-medium"><span class="risk-score">5/10</span><span>Moderate concern</span></div>
+      <p class="prose">The policy is broad about sharing with partners and keeps long retention windows.</p>
+      <h3 class="subhead">Flags</h3>
+      <ul class="bullet-list">
+        <li>Broad third-party sharing language</li>
+        <li>Indefinite retention for some data</li>
+      </ul>
+    </div>
+
+    <div class="panel-body" data-panel="charts" hidden>
+      <h2 class="panel-title">Risk charts</h2>
+      <p class="panel-copy">A visual read of the policy's risk rating alongside the tracking this site actually loads.</p>
+
+      <div class="dash-grid">
+        <div class="gauge">
+          <svg viewBox="0 0 140 140" role="img" aria-label="Risk score 5 out of 10 — Moderate concern">
+            <circle cx="70" cy="70" r="58" fill="none" stroke="rgba(16, 36, 31, 0.1)" stroke-width="14"></circle>
+            <circle cx="70" cy="70" r="58" fill="none" stroke="#9a3412" stroke-width="14" stroke-linecap="round" stroke-dasharray="182.21 364.42" transform="rotate(-90 70 70)"></circle>
+            <text x="70" y="70" text-anchor="middle" class="gauge-score">5</text>
+            <text x="70" y="90" text-anchor="middle" class="gauge-max">/ 10</text>
+          </svg>
+          <p class="gauge-label" style="color: #9a3412;">Moderate concern</p>
+        </div>
+        <div class="stat-row">
+          <div class="stat"><span class="stat-value">4</span><span class="stat-label">Cookies</span></div>
+          <div class="stat"><span class="stat-value">0</span><span class="stat-label">Third-party cookies</span></div>
+          <div class="stat"><span class="stat-value">5</span><span class="stat-label">Technologies</span></div>
+          <div class="stat"><span class="stat-value">2</span><span class="stat-label">Red flags</span></div>
+        </div>
+      </div>
+
+      <div class="chart-grid">
+        <div class="chart-block">
+          <h3 class="subhead">Cookies by category</h3>
+          <div class="bars">
+            <div class="bar-row"><span class="bar-label">Advertising</span><span class="bar-track"><span class="bar-fill" style="width:25%;background:#9f1239;"></span></span><span class="bar-value">1</span></div>
+            <div class="bar-row"><span class="bar-label">Analytics</span><span class="bar-track"><span class="bar-fill" style="width:25%;background:#0f766e;"></span></span><span class="bar-value">1</span></div>
+            <div class="bar-row"><span class="bar-label">Social</span><span class="bar-track"><span class="bar-fill" style="width:0%;background:#6d28d9;"></span></span><span class="bar-value">0</span></div>
+            <div class="bar-row"><span class="bar-label">Functional</span><span class="bar-track"><span class="bar-fill" style="width:0%;background:#1d4ed8;"></span></span><span class="bar-value">0</span></div>
+            <div class="bar-row"><span class="bar-label">Essential</span><span class="bar-track"><span class="bar-fill" style="width:50%;background:#5a726a;"></span></span><span class="bar-value">2</span></div>
+            <div class="bar-row"><span class="bar-label">Unclassified</span><span class="bar-track"><span class="bar-fill" style="width:0%;background:#94a3b8;"></span></span><span class="bar-value">0</span></div>
+          </div>
+        </div>
+        <div class="chart-block">
+          <h3 class="subhead">Trackers by category</h3>
+          <div class="bars">
+            <div class="bar-row"><span class="bar-label">Advertising</span><span class="bar-track"><span class="bar-fill" style="width:20%;background:#9f1239;"></span></span><span class="bar-value">1</span></div>
+            <div class="bar-row"><span class="bar-label">Analytics</span><span class="bar-track"><span class="bar-fill" style="width:40%;background:#0f766e;"></span></span><span class="bar-value">2</span></div>
+            <div class="bar-row"><span class="bar-label">Social</span><span class="bar-track"><span class="bar-fill" style="width:20%;background:#6d28d9;"></span></span><span class="bar-value">1</span></div>
+            <div class="bar-row"><span class="bar-label">Functional</span><span class="bar-track"><span class="bar-fill" style="width:0%;background:#1d4ed8;"></span></span><span class="bar-value">0</span></div>
+            <div class="bar-row"><span class="bar-label">Essential</span><span class="bar-track"><span class="bar-fill" style="width:20%;background:#5a726a;"></span></span><span class="bar-value">1</span></div>
+            <div class="bar-row"><span class="bar-label">Unclassified</span><span class="bar-track"><span class="bar-fill" style="width:0%;background:#94a3b8;"></span></span><span class="bar-value">0</span></div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="subhead">Risk flags</h3>
+      <ul class="bullet-list">
+        <li>Broad third-party sharing language</li>
+        <li>Indefinite retention for some data</li>
+      </ul>
+    </div>
+
+    <div class="panel-body" data-panel="trackers" hidden>
+      <h2 class="panel-title">Cookies &amp; trackers</h2>
+      <p class="panel-copy">Detected by scanning the pages we fetched for cookies set in response headers and for known tracking scripts, pixels and iframes.</p>
+
+      <div class="stat-row">
+        <div class="stat"><span class="stat-value">4</span><span class="stat-label">Cookies</span></div>
+        <div class="stat"><span class="stat-value">5</span><span class="stat-label">Technologies</span></div>
+        <div class="stat"><span class="stat-value">1</span><span class="stat-label">Analytics cookies</span></div>
+        <div class="stat"><span class="stat-value">1</span><span class="stat-label">Advertising cookies</span></div>
+      </div>
+
+      <h3 class="subhead">Cookies set by the site</h3>
+      <ul class="tracker-list">
+        <li class="tracker-item">
+          <div class="tracker-head"><code class="tracker-name">_ga</code><span class="tag tag-analytics">Analytics</span></div>
+          <p class="tracker-meta">Google Analytics · Persistent · Secure · SameSite=Lax · example.com</p>
+        </li>
+        <li class="tracker-item">
+          <div class="tracker-head"><code class="tracker-name">_gcl_au</code><span class="tag tag-advertising">Advertising</span></div>
+          <p class="tracker-meta">Google Ads / DoubleClick · Persistent · Secure · SameSite=Lax · example.com</p>
+        </li>
+        <li class="tracker-item">
+          <div class="tracker-head"><code class="tracker-name">PHPSESSID</code><span class="tag tag-essential">Essential</span></div>
+          <p class="tracker-meta">Session · HttpOnly · SameSite=Lax · example.com</p>
+        </li>
+        <li class="tracker-item">
+          <div class="tracker-head"><code class="tracker-name">__cf_bm</code><span class="tag tag-essential">Essential</span></div>
+          <p class="tracker-meta">Cloudflare · Persistent · Secure · HttpOnly · example.com</p>
+        </li>
+      </ul>
+
+      <h3 class="subhead">Tracking technologies</h3>
+      <ul class="tracker-list">
+        <li class="tracker-item">
+          <div class="tracker-head"><span class="tracker-name">Google Tag Manager</span><span class="tag tag-analytics">Analytics</span></div>
+          <p class="tracker-meta">Found via script, inline · www.googletagmanager.com</p>
+        </li>
+        <li class="tracker-item">
+          <div class="tracker-head"><span class="tracker-name">Meta Pixel</span><span class="tag tag-advertising">Advertising</span></div>
+          <p class="tracker-meta">Found via script, pixel, inline · connect.facebook.net</p>
+        </li>
+        <li class="tracker-item">
+          <div class="tracker-head"><span class="tracker-name">Hotjar</span><span class="tag tag-analytics">Analytics</span></div>
+          <p class="tracker-meta">Found via script · static.hotjar.com</p>
+        </li>
+        <li class="tracker-item">
+          <div class="tracker-head"><span class="tracker-name">YouTube</span><span class="tag tag-social">Social</span></div>
+          <p class="tracker-meta">Found via iframe, preconnect · www.youtube.com</p>
+        </li>
+        <li class="tracker-item">
+          <div class="tracker-head"><span class="tracker-name">Stripe</span><span class="tag tag-essential">Essential</span></div>
+          <p class="tracker-meta">Found via script · js.stripe.com</p>
+        </li>
+      </ul>
+
+      <ul class="bullet-list notes">
+        <li>Only cookies sent in HTTP response headers are visible here; cookies created by JavaScript in the browser, and cookies set by third-party requests, are not included.</li>
+        <li>Tracking technologies were identified from the page HTML (script, iframe, image and preconnect references) and known signatures.</li>
+      </ul>
+    </div>
+  </section>
+</div>
+<script>
+  var tabs = document.querySelectorAll('.tab');
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      tabs.forEach(function (t) { t.classList.remove('is-active'); });
+      tab.classList.add('is-active');
+      document.querySelectorAll('[data-panel]').forEach(function (p) {
+        p.hidden = p.getAttribute('data-panel') !== tab.getAttribute('data-tab');
+      });
+    });
+  });
+
+  var sample = {
+    inputUrl: "https://example.com/",
+    policyUrl: "https://example.com/privacy-policy",
+    summary: "First paragraph of the brief.\n\nSecond paragraph of the brief.",
+    dataCollected: ["Account details", "Device information"],
+    sharing: ["Service providers", "Legal disclosures"],
+    rights: ["Access and correction", "Deletion requests"],
+    cookies: "Essential and analytics cookies with a consent banner.",
+    risks: { level: "medium", score: 5, flags: ["Broad sharing language"], notes: "Broad sharing and long retention windows." },
+    trackers: {
+      cookies: [
+        { name: "_ga", category: "analytics", vendor: "Google Analytics", session: false, secure: true, httpOnly: false, sameSite: "Lax", domain: "example.com" },
+        { name: "_gcl_au", category: "advertising", vendor: "Google Ads / DoubleClick", session: false, secure: true, httpOnly: false, sameSite: "Lax", domain: "example.com" },
+        { name: "PHPSESSID", category: "essential", vendor: null, session: true, secure: false, httpOnly: true, sameSite: "Lax", domain: "example.com" }
+      ],
+      technologies: [
+        { vendor: "Google Tag Manager", category: "analytics", sources: ["script", "inline"] },
+        { vendor: "Meta Pixel", category: "advertising", sources: ["script", "pixel", "inline"] }
+      ],
+      counts: { cookies: 3, thirdPartyCookies: 0 },
+      notes: ["Only cookies sent in HTTP response headers are visible here; cookies created by JavaScript in the browser, and cookies set by third-party requests, are not included."]
+    },
+    analyzedAt: new Date().toISOString()
+  };
+
+  function hostOf(u) { try { return new URL(u).hostname.replace(/^www\./, ""); } catch (e) { return "site"; } }
+  function bullets(items, empty) {
+    return items.length ? items.map(function (i) { return "- " + i; }).join("\n") : "- " + empty;
+  }
+  function markdown(r) {
+    return "# Privacy brief — " + hostOf(r.inputUrl) + "\n\n" +
+      "- **Site:** " + r.inputUrl + "\n" +
+      "- **Privacy policy:** " + r.policyUrl + "\n" +
+      "- **Analyzed:** " + new Date(r.analyzedAt).toLocaleString() + "\n\n" +
+      "## Summary\n\n" + r.summary + "\n\n" +
+      "## Data collected\n\n" + bullets(r.dataCollected, "None identified.") + "\n\n" +
+      "## Sharing\n\n" + bullets(r.sharing, "Not described.") + "\n\n" +
+      "## Your rights\n\n" + bullets(r.rights, "Not described.") + "\n\n" +
+      "## Cookies & tracking\n\n" + r.cookies + "\n\n" +
+      "## Risks\n\n**" + r.risks.score + "/10 — " + r.risks.level + "**\n\n" + r.risks.notes + "\n\n" +
+      "**Flags**\n\n" + bullets(r.risks.flags, "None called out.") + "\n\n" +
+      "## Cookies & trackers (detected)\n\n" +
+      r.trackers.counts.cookies + " cookie(s) seen in response headers (" + r.trackers.counts.thirdPartyCookies + " third-party); " + r.trackers.technologies.length + " tracking technology/ies detected.\n\n" +
+      "### Cookies set by the site\n\n" +
+      r.trackers.cookies.map(function (c) {
+        var attrs = [c.session ? "Session" : "Persistent", c.secure ? "Secure" : null, c.httpOnly ? "HttpOnly" : null, c.sameSite ? "SameSite=" + c.sameSite : null, c.domain].filter(Boolean).join(" · ");
+        return "- `" + c.name + "` — " + c.category + (c.vendor ? " · " + c.vendor : "") + " · " + attrs;
+      }).join("\n") + "\n\n" +
+      "### Tracking technologies\n\n" +
+      r.trackers.technologies.map(function (t) { return "- **" + t.vendor + "** — " + t.category + " — found via " + t.sources.join(", "); }).join("\n") + "\n\n" +
+      "### Detection notes\n\n" +
+      r.trackers.notes.map(function (n) { return "- " + n; }).join("\n") + "\n";
+  }
+  function save(name, text, mime) {
+    var blob = new Blob([text], { type: mime + ";charset=utf-8" });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove();
+    URL.revokeObjectURL(url);
+  }
+  document.getElementById("export-md").addEventListener("click", function () {
+    save("policybrief-example.com.md", markdown(sample), "text/markdown");
+  });
+  document.getElementById("export-json").addEventListener("click", function () {
+    save(
+      "policybrief-example.com.json",
+      JSON.stringify({ generator: "PolicyBrief", version: 1, exportedAt: new Date().toISOString(), result: sample }, null, 2) + "\n",
+      "application/json"
+    );
+  });
+</script>
+</body>
+</html>
