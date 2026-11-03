@@ -1,6 +1,6 @@
 # PolicyBrief
 
-Enter a website URL, discover its privacy policy, and get a clear Groq-powered summary across five tabs: Analyze, Summary, Data collected, Sharing & rights, and Risks.
+Enter a website URL, discover its privacy policy, and get a clear Groq-powered summary across five tabs: Analyze, Summary, Data collected, Rights, and Risks.
 
 ## Setup
 
