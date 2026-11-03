@@ -23,7 +23,7 @@ const TABS: { id: TabId; label: string }[] = [
   { id: "analyze", label: "Analyze" },
   { id: "summary", label: "Summary" },
   { id: "data", label: "Data collected" },
-  { id: "sharing", label: "Sharing & rights" },
+  { id: "sharing", label: "Rights" },
   { id: "risks", label: "Risks" },
   { id: "charts", label: "Risk charts" },
   { id: "trackers", label: "Cookies & trackers" },
